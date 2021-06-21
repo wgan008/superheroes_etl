@@ -11,7 +11,8 @@ docker run -d -p 27017:27017 --name "mongo" -v /<absolute path>/data:/data/db mo
 
 ## Process Data in Spark-shell
 1. Start spark shell with MongDB connector via cli
-```spark-shell --conf "spark.mongodb.input.uri=mongodb://localhost/test.heroes?readPreference=primaryPreferred" \
+```
+spark-shell --conf "spark.mongodb.input.uri=mongodb://localhost/test.heroes?readPreference=primaryPreferred" \
                   --conf "spark.mongodb.output.uri=mongodb://localhost/test.heroes" \
                   --packages org.mongodb.spark:mongo-spark-connector_2.12:2.4.2
 ```
@@ -36,7 +37,7 @@ docker exec -it mongo mongo
 ```
 Get all documents:
 ```
-> db.products.find()
+> db.heroes.find()
 ```
 Some of data looks like:
 ```
